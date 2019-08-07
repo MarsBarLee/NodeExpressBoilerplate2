@@ -84,6 +84,17 @@ app.post("/signup", (req, res) => {
   );
 });
 
+// app.get? login
+
+app.get("/items", (req, res) => {
+    mysqlConnection.query("SELECT * FROM items", (err, rows, field) => {
+      if (!err) {
+        console.log(rows);
+        res.json(rows);
+      } else console.log(err);
+    });
+  });
+
 app.post("/checkout", (req, res) => {
   console.log("checkout started");
   let poke = req.body;

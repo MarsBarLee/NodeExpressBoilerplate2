@@ -1,21 +1,23 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Students from './Students/Students.js';
+// import Students from './Students/Students.js';
+import Users from './Users/Users.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Students />
+        {/* <Students /> */}
+        <Users />
         <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React!
         </a>
       </header>
     </div>
