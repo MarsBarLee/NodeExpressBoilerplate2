@@ -44,6 +44,17 @@ class Users extends Component {
         }
     }
 
+    login = async event => {
+        event.preventDefault();
+        const {username, password} = this.state;
+        try {
+            await axios.get('/login', {username, password})
+            console.log('Login attempted on front-end')
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
     render() {
         if (this.state.users.length) {
             return(
@@ -70,8 +81,23 @@ class Users extends Component {
                         />
                     </form>
                     <button type='submit' onClick={this.addUser}>Submit</button>
+                    <br></br>
+                    <br></br>
                     <div>
                         Already signed up? Login below!
+                        <form>
+                            <input
+                            name="username"
+                            placeholder="Enter username here" 
+                            onChange={this.handleChange}
+                            />
+                            <input
+                            name="password"
+                            placeholder="Enter password here"
+                            onChange={this.handleChange}
+                            />
+                        </form>
+                        <button type='submit' onClick={this.login}>Submit</button>
                     </div>
                 </div>
             )

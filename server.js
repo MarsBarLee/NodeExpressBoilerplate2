@@ -84,16 +84,42 @@ app.post("/signup", (req, res) => {
   );
 });
 
-// app.get? login
+app.get("/login", (req, res) => {
+    console.log("Log in attempt started")
+    // console.log(req.body)
+  const logInAttempt = {
+    username: req.body.username,
+    password: req.body.password
+  };
+  mysqlConnection.query(
+    "SELECT * FROM userbase WHERE username=?;", [logInAttempt.username],
+    (err, rows, field) => {
+      if (!err) {
+        console.log('this is result from database', rows); // Mars example: [ RowDataPacket { userid: 1, username: 'Red', password: 'pikachu4ever' } ]
+
+        // If the result is an array, you would have to use row[0].password https://stackoverflow.com/questions/31221980/how-to-access-a-rowdatapacket-object
+        console.log('this is result from database as object', rows[0]); // Mars example: RowDataPacket { userid: 1, username: 'Red', password: 'pikachu4ever' }
+
+        console.log('this is password from database', rows[0].password) // Mars example: pikachu4ever
+        console.log('this is password from login attempt', logInAttempt.password) 
+        if (rows[0].password === logInAttempt.password) {
+          res.send("Log in successful");
+        } else {
+          res.send("Log in failed.");
+        }
+      } else console.log(err);
+    }
+  );
+});
 
 app.get("/items", (req, res) => {
-    mysqlConnection.query("SELECT * FROM items", (err, rows, field) => {
-      if (!err) {
-        console.log(rows);
-        res.json(rows);
-      } else console.log(err);
-    });
+  mysqlConnection.query("SELECT * FROM items", (err, rows, field) => {
+    if (!err) {
+      console.log(rows);
+      res.json(rows);
+    } else console.log(err);
   });
+});
 
 app.post("/checkout", (req, res) => {
   console.log("checkout started");
