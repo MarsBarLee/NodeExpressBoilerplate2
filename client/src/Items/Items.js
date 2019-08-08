@@ -61,35 +61,42 @@ class Items extends Component {
         if (this.state.items.length) {
             return(
                 <div>
-                    Check out our items! Only the best for your pokemon!
-                    <div>
+                    <div className="hero-image">
+                        <div className="hero-text">
+                        <h1>Buy now!</h1>
+                        </div>
+                    </div>
+                    <div className="checkout-header">
                         <h2>Current cart</h2>
                         <h2>Total cost: ₽ {this.state.totalPrice} </h2>
                         <h2>Number of items in cart: {this.state.numOfItems} </h2>
                         <button onClick={this.checkout}>Checkout</button>
+                    </div>
+                    <div className="checkout-container">
                         {this.state.cart.map(el => {
                             return (
-                                <li key={el.itemid}>
+                                <div className="checkout-grid" key={el.itemid}>
                                     <img src={el.img} alt={this.itemname} />
                                     <h3>{el.itemname}</h3>
                                     <h4>₽ {el.price}</h4>
-                                </li>
+                                </div>
                             )
                         })}
                     </div>
-                    <ul>
-                        {this.state.items.map(el => {
-                            return (
-                                <li key={el.itemid}>
-                                    <img src={el.img} alt={this.itemname} />
-                                    <h3>{el.itemname}</h3>
-                                    <h4>₽ {el.price}</h4>
-                                    <button onClick={() => this.addToCart(el)}>Add to Cart</button>
-                                </li>
-                            )
-                        })}
-                    </ul>
+                    {/* item display */}
+                    <div className="grid-container">
+                            {this.state.items.map(el => {
+                                return (
+                                    <div className="grid-item" key={el.itemid}>
+                                        <img src={el.img} alt={this.itemname} />
+                                        <h3>{el.itemname}</h3>
+                                        <h4>₽ {el.price}</h4>
+                                        <button onClick={() => this.addToCart(el)}>Add to Cart</button>
+                                    </div>
+                                )
+                            })}
                     </div>
+                </div>
             )
             } else {
                 return (

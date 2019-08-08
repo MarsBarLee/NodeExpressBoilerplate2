@@ -4,7 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-class Users extends Component {
+class Users2 extends Component {
     constructor() {
         super();
         this.state ={
@@ -61,13 +61,8 @@ class Users extends Component {
     render() {
         if (this.state.users.length) {
             return(
-                <div>
-                    <div className="hero-image">
-                        <div className="hero-text">
-                        <h1>Join us today! Here are some current trainers buying at PokeMars-Mart!</h1>
-                    </div>
-
-                    </div>
+                <MuiThemeProvider> {/* div */}
+                    Join us today! Here are some current trainers buying at PokeMars-Mart!
                     <ul>
                         {this.state.users.map(el => {
                             return (
@@ -77,39 +72,49 @@ class Users extends Component {
                     </ul>
                     Let's begin!
                     <form>
-                        <input
+                        <TextField
                         name="username"
-                        placeholder="Enter username here" 
+                        floatingLabelText="Enter username here" 
                         onChange={this.handleChange}
                         />
                         <br></br>
-                        <input
+                        <TextField
                         name="password"
-                        placeholder="Enter password here"
+                        floatingLabelText="Enter password here" 
                         onChange={this.handleChange}
                         />
                     </form>
-                    <button type='submit' onClick={this.addUser}>Submit</button>
+                    <RaisedButton label="Sign up"
+                    type='submit'
+                    primary={true}
+                    onClick={this.addUser}
+                    styles={styles.button}
+                    />
                     <br></br>
                     <br></br>
                     <div>
                         Already signed up? Login below!
                         <form>
-                            <input
+                            <TextField
                             name="username"
-                            placeholder="Enter username here" 
+                            floatingLabelText="Enter username here" 
                             onChange={this.handleChange}
                             />
                             <br></br>
-                            <input
+                            <TextField
                             name="password"
-                            placeholder="Enter password here"
+                            floatingLabelText="Enter password here"
                             onChange={this.handleChange}
                             />
                         </form>
-                        <button type='submit' onClick={this.login}>Submit</button>
+                        <RaisedButton label="Login"
+                        type='submit'
+                        primary={true}
+                        onClick={this.login}
+                        styles={styles.button}
+                        />
                     </div>
-                </div>
+                </MuiThemeProvider>
             )
         } else {
             return (
@@ -120,4 +125,10 @@ class Users extends Component {
     }
 }
 
-export default Users;
+const styles = {
+    button: {
+        margin: 15
+    }
+}
+
+export default Users2;
