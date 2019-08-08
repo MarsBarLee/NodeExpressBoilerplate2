@@ -1,13 +1,15 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const port = 4000;
+const port = node.process.PORT || 5000;
 const mysql = require("mysql");
-
+const path = require("path")
 // Middleware
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
 
 const mysqlConnection = mysql.createConnection({
   host: "localhost",
@@ -33,6 +35,12 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   res.send("Hello!");
 });
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static("client/build"))
+  app.get("*",(req,res)=>{path.resolve(__dirname,'client/build')
+  })
+}
 
 app.get("/api/students", (req, res) => {
   const students = [
