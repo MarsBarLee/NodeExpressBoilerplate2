@@ -32,15 +32,17 @@ app.listen(port, () => {
   console.log(`Server has started on Port ${port}`);
 });
 
-app.get("/", (req, res) => {
-  res.send("Hello!");
-});
-
-if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV === "production"){
   app.use(express.static("client/build"))
   app.get("*",(req,res)=>{path.resolve(__dirname,'client/build')
   })
 }
+
+app.get("/", (req, res) => {
+  res.send("Hello!");
+});
+
+
 
 app.get("/api/students", (req, res) => {
   const students = [
