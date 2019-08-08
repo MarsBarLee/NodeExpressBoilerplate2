@@ -11,22 +11,22 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-const mysqlConnection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Moonlight123!",
-  database: "pokemart",
-  multipleStatements: true
-});
+// const mysqlConnection = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "Moonlight123!",
+//   database: "pokemart",
+//   multipleStatements: true
+// });
 
-mysqlConnection.connect(err => {
-  if (!err) console.log(`DB connection succeeded!`);
-  else {
-    console.log(
-      `DB connection failed. Error:` + JSON.stringify(err, undefined, 2)
-    );
-  }
-});
+// mysqlConnection.connect(err => {
+//   if (!err) console.log(`DB connection succeeded!`);
+//   else {
+//     console.log(
+//       `DB connection failed. Error:` + JSON.stringify(err, undefined, 2)
+//     );
+//   }
+// });
 
 app.listen(port, () => {
   console.log(`Server has started on Port ${port}`);
