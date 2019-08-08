@@ -1,38 +1,49 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const port = 4000;
+const port = process.env.PORT || 5000;
 const mysql = require("mysql");
-
+const path = require("path")
 // Middleware
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const mysqlConnection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Moonlight123!",
-  database: "pokemart",
-  multipleStatements: true
-});
 
-mysqlConnection.connect(err => {
-  if (!err) console.log(`DB connection succeeded!`);
-  else {
-    console.log(
-      `DB connection failed. Error:` + JSON.stringify(err, undefined, 2)
-    );
-  }
-});
+
+// const mysqlConnection = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "Moonlight123!",
+//   database: "pokemart",
+//   multipleStatements: true
+// });
+
+// mysqlConnection.connect(err => {
+//   if (!err) console.log(`DB connection succeeded!`);
+//   else {
+//     console.log(
+//       `DB connection failed. Error:` + JSON.stringify(err, undefined, 2)
+//     );
+//   }
+// });
 
 app.listen(port, () => {
   console.log(`Server has started on Port ${port}`);
 });
 
+if(process.env.NODE_ENV === "production"){
+  console.log('I ran')
+  app.use(express.static("client/build"))
+  app.get("*",(req,res)=>{path.resolve(__dirname,'client/build')
+  })
+}
+
 app.get("/", (req, res) => {
   res.send("Hello!");
 });
+
+
 
 app.get("/api/students", (req, res) => {
   const students = [

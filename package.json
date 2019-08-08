@@ -8,7 +8,9 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd client && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild":"cd client && npm install && npm run build",
+    "push": "git add . && git commit -m 'build' && git push"
   },
   "author": "Mars Lee",
   "license": "ISC",
@@ -23,5 +25,6 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
-  }
+  },
+  "proxy": "http://localhost:4000"
 }
