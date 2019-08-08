@@ -33,6 +33,7 @@ app.listen(port, () => {
 });
 
 if(process.env.NODE_ENV === "production"){
+  console.log('I ran')
   app.use(express.static("client/build"))
   app.get("*",(req,res)=>{path.resolve(__dirname,'client/build')
   })
