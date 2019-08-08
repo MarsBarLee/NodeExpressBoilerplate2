@@ -1,13 +1,21 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 const mysql = require("mysql");
 const path = require("path");
 // Middleware
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// const mysqlConnection = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "Moonlight123!",
+//   database: "pokemart",
+//   multipleStatements: true
+// });
 
 const mysqlConnection = mysql.createConnection({
   host: "us-cdbr-iron-east-02.cleardb.net", // localhost
@@ -17,14 +25,14 @@ const mysqlConnection = mysql.createConnection({
   multipleStatements: true
 });
 
-// mysqlConnection.connect(err => {
-//   if (!err) console.log(`DB connection succeeded!`);
-//   else {
-//     console.log(
-//       `DB connection failed. Error:` + JSON.stringify(err, undefined, 2)
-//     );
-//   }
-// });
+mysqlConnection.connect(err => {
+  if (!err) console.log(`DB connection succeeded!`);
+  else {
+    console.log(
+      `DB connection failed. Error:` + JSON.stringify(err, undefined, 2)
+    );
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server has started on Port ${port}`);
