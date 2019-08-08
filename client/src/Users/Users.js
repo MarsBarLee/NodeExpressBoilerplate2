@@ -55,6 +55,17 @@ class Users extends Component {
         }
     }
 
+    // login = async event => {
+    //     event.preventDefault();
+    //     const {username, password} = this.state;
+    //     try {
+    //         await axios.get('/login', {username, password})
+    //         console.log('Login attempted on front-end')
+    //     } catch(error) {
+    //         console.log(error)
+    //     }
+    // }
+
     render() {
         if (this.state.users.length) {
             return(
@@ -74,6 +85,7 @@ class Users extends Component {
                         placeholder="Enter username here" 
                         onChange={this.handleChange}
                         />
+                        <br></br>
                         <input
                         name="password"
                         placeholder="Enter password here"
@@ -91,6 +103,7 @@ class Users extends Component {
                             placeholder="Enter username here" 
                             onChange={this.handleChange}
                             />
+                            <br></br>
                             <input
                             name="password"
                             placeholder="Enter password here"

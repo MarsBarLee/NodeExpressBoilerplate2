@@ -85,8 +85,7 @@ app.post("/signup", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-    console.log("Log in attempt started")
-    // console.log(req.body)
+    console.log("Log in attempt started on back-end")
   const logInAttempt = {
     username: req.body.username,
     password: req.body.password
