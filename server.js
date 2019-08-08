@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 const mysql = require("mysql");
 const path = require("path");
 // Middleware
