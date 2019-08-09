@@ -1,43 +1,86 @@
 /* material-ui, materialcss, react-strap, BLK Design System React by Creative Time, modist (online Boostrap template) */
+@import url("https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 
 .App {
   text-align: center;
   height: 100%;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+#title {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.page-margins {
+  margin-right: 2.5vh;
+  margin-left: 2.5vh;
+}
+
+.page-section {
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
 }
 
 /* Navbar.js */
-.navbar {
-  color: #fff;
-  /* background-color: #ee6e73; */
-  background-color: rgba(255,255,255,0.5);
+#navbar {
+  /* background-color: #587cdd; */
+  background-color: transparent;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  /* background-color: rgba(0, 0, 0, 0.5);  */
+  /* background: none; */
+  overflow: hidden;
   width: 100%;
-  height: 56px;
   line-height: 56px;
-  
+  top: 0;
+  z-index: 100;
+  margin: 0;
+  /* margin-bottom: 50px; */
+  /* position: relative; */
+  /* display: block; */
 }
 
 /* In NavBar.js, added <ul className="nav-links"> */
 .navbar-links {
+  margin: 0px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
-  color: white;
+  background: none;
   text-decoration: none;
   padding: 15;
+}
+
+.btn {
+  cursor:pointer;
+  border-style: solid;
+  border-width: thick;
+  display:inline;
+  padding: 0.5em;
 }
 
 /* Home,js, the hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("hero-img.jpg");
-
+  background-image: linear-gradient(
+      rgba(92, 133, 180, 0.514),
+      rgba(25, 35, 88, 0.5)
+    ),
+    url("./img/hero-img3.jpg");
+  /* filter: brightness(1.75); */
   /* Set a specific height */
-  height: 50vh;
+  height: 70vh;
 
   /* Position and center the image to scale nicely on all screens */
+  top: 0;
+  /* margin-top: -20px; */
+  /* padding: top;
+  margin: 0; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,14 +94,135 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  padding-bottom: 5vh;
+}
+
+/* .hero-text h1 {
+  margin: 0;
+} */
+
+.promotion-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(
+      rgba(183, 214, 255, 0.5),
+      rgba(25, 35, 88, 0.5)
+    ),
+    url("./img/promotion.jfif");
+  /* filter: brightness(1.75); */
+  /* Set a specific height */
+  height: 50vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  top: 0;
+  /* padding: top;
+  margin: 0; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  cursor:pointer;
+}
+
+.promotion-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.bike-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(
+      rgba(183, 214, 255, 0.5),
+      rgba(25, 35, 88, 0.5)
+    ),
+    url("./img/biking.jpg");
+  /* filter: brightness(1.75); */
+  /* Set a specific height */
+  height: 50vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  top: 0;
+  /* padding: top;
+  margin: 0; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  cursor:pointer;
+}
+
+.bike-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.fishing-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(
+      rgba(183, 214, 255, 0.5),
+      rgba(25, 35, 88, 0.5)
+    ),
+    url("./img/fishing.jfif");
+  /* filter: brightness(1.75); */
+  /* Set a specific height */
+  height: 50vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  top: 0;
+  /* padding: top;
+  margin: 0; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  cursor:pointer;
+}
+
+.fishing-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.mountain-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(
+      rgba(183, 214, 255, 0.5),
+      rgba(25, 35, 88, 0.5)
+    ),
+    url("./img/mountain.jfif");
+  /* filter: brightness(1.75); */
+  /* Set a specific height */
+  height: 50vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  top: 0;
+  /* padding: top;
+  margin: 0; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  cursor:pointer;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #2196F3;
+  background-color: #2196f3;
   padding: 10px;
 }
+
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
@@ -67,16 +231,75 @@
   text-align: center;
 }
 
+.grid-home-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.grid-home-img {
+  background-image: linear-gradient(
+      rgba(183, 214, 255, 0.5),
+      rgba(25, 35, 88, 0.5)
+    ),
+    url("./img/pokeball.jfif");
+
+  height: 50vh;
+  top: 0;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.grid-home-text {
+  text-align: center;
+  padding: 3vh;
+}
+
+.grid-mountain-container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.grid-mountain-img {
+  background-image: linear-gradient(
+      rgba(183, 214, 255, 0.2),
+      rgba(25, 35, 88, 0.2)
+    ),
+    url("./img/phone-looker3.jpg");
+
+  height: 50vh;
+  top: 0;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+
+
+.app-prototype {
+  margin: 1.5rem;
+  height: 45vh;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 .checkout-header {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+
 .checkout-container {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
-  background-color: #2196F3;
+  background-color: #2196f3;
   padding: 10px;
 }
 
@@ -86,6 +309,33 @@
   padding: 20px;
   font-size: 30px;
   text-align: center;
+}
+
+.footer {
+  background-color:rgba(34, 34, 34, 0.8);
+}
+
+.footer-text{
+  color: white;
+  padding: 0.1em;
+}
+
+.footer-text h4{
+  margin: 0.4em;
+}
+
+.footer-link{
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-social-media{
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5em;
+  cursor:pointer;
 }
 
 /* Create-React-App */

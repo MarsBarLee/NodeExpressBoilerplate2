@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000; // change to 5000 for external hosted database
 const mysql = require("mysql");
 const path = require("path");
 // Middleware
@@ -9,21 +9,21 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// const mysqlConnection = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "Moonlight123!",
-//   database: "pokemart",
-//   multipleStatements: true
-// });
-
 const mysqlConnection = mysql.createConnection({
-  host: "us-cdbr-iron-east-02.cleardb.net", // localhost
-  user: "bad502ca14c7b0", // root
-  password: "c51ee0a4", // Moonlight123!
-  database: "heroku_b4904ed33b05732", // pokemart
+  host: "localhost",
+  user: "root",
+  password: "Moonlight123!",
+  database: "pokemart",
   multipleStatements: true
 });
+
+// const mysqlConnection = mysql.createConnection({
+//   host: "us-cdbr-iron-east-02.cleardb.net", // localhost
+//   user: "bad502ca14c7b0", // root
+//   password: "c51ee0a4", // Moonlight123!
+//   database: "heroku_b4904ed33b05732", // pokemart
+//   multipleStatements: true
+// });
 
 mysqlConnection.connect(err => {
   if (!err) console.log(`DB connection succeeded!`);
