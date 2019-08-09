@@ -61,13 +61,13 @@ class Items extends Component {
         if (this.state.items.length) {
             return(
                 <div>
-                    <div className="hero-image">
+                    <div className="items-image">
                         <div className="hero-text">
-                        <h1>Buy now!</h1>
+                            <h1>Be ready for any battle.</h1>
                         </div>
                     </div>
+                    <h2>Cart</h2>
                     <div className="checkout-header">
-                        <h2>Current cart</h2>
                         <h2>Total cost: ₽ {this.state.totalPrice} </h2>
                         <h2>Number of items in cart: {this.state.numOfItems} </h2>
                         <button onClick={this.checkout}>Checkout</button>
@@ -75,20 +75,21 @@ class Items extends Component {
                     <div className="checkout-container">
                         {this.state.cart.map(el => {
                             return (
-                                <div className="checkout-grid" key={el.itemid}>
-                                    <img src={el.img} alt={this.itemname} />
+                                <div className="checkout-grid" key={el.itemid} >
+                                    <img src={el.img} alt={this.itemname} height="40vim"/>
                                     <h3>{el.itemname}</h3>
                                     <h4>₽ {el.price}</h4>
                                 </div>
                             )
                         })}
                     </div>
-                    {/* item display */}
+                    
+                    <h1>Inventory</h1>
                     <div className="grid-container">
                             {this.state.items.map(el => {
                                 return (
                                     <div className="grid-item" key={el.itemid}>
-                                        <img src={el.img} alt={this.itemname} />
+                                        <img src={el.img} alt={this.itemname} height="60vim"/>
                                         <h3>{el.itemname}</h3>
                                         <h4>₽ {el.price}</h4>
                                         <button onClick={() => this.addToCart(el)}>Add to Cart</button>
@@ -100,7 +101,7 @@ class Items extends Component {
             )
             } else {
                 return (
-                    <div>"503 Service Unavailable"</div>
+                    // <div>"503 Service Unavailable"</div>
                     <div>"If you see this message, that our servers are temporarily unavailable. Our apologies, please refresh or come back another time."</div>
                 )
             }

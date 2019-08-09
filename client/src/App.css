@@ -219,8 +219,8 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #2196f3;
-  padding: 10px;
+  background-color:rgba(183, 214, 255, 0.5);
+  padding: 2.5em;
 }
 
 .grid-item {
@@ -229,6 +229,10 @@
   padding: 20px;
   font-size: 30px;
   text-align: center;
+}
+
+.grid-item h3, h4 {
+  margin: 0;
 }
 
 .grid-home-container {
@@ -295,12 +299,11 @@
   align-items: center;
 }
 
-
 .checkout-container {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
-  background-color: #2196f3;
-  padding: 10px;
+  background-color:rgba(183, 214, 255, 0.5);
+  padding: 0.5em;
 }
 
 .checkout-grid {
@@ -309,6 +312,11 @@
   padding: 20px;
   font-size: 30px;
   text-align: center;
+}
+
+.checkout-grid h3, h4 {
+  margin: 0;
+  font-size: 20px;
 }
 
 .footer {
@@ -336,6 +344,66 @@
   align-items: center;
   padding: 0.5em;
   cursor:pointer;
+}
+
+/* Users.js */
+.grid-users-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  /* background-color: #2196f3; */
+  padding: 10px;
+}
+
+.grid-users-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.sign-up-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(
+      rgba(183, 214, 255, 0.5),
+      rgba(25, 35, 88, 0.5)
+    ),
+    url("./img/camp2.jfif");
+  /* filter: brightness(1.75); */
+  /* Set a specific height */
+  height: 50vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  top: 0;
+  /* padding: top;
+  margin: 0; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  cursor:pointer;
+}
+
+.items-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(
+    rgba(183, 214, 255, 0.5),
+    rgba(25, 35, 88, 0.5)
+  ),
+  url("./img/mountain2.jfif");
+/* filter: brightness(1.75); */
+/* Set a specific height */
+height: 50vh;
+
+/* Position and center the image to scale nicely on all screens */
+top: 0;
+/* padding: top;
+margin: 0; */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+cursor:pointer;
 }
 
 /* Create-React-App */

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 import logo2 from "./img/logo2.png";
 import app from "./img/iphonebase4.png";
 import facebook from "./img/facebook2.png"
@@ -16,7 +17,9 @@ class Home extends Component {
                     <div className="hero-text">
                         <img src={logo2} width="100ems" />
                         <h1>ready for any adventure</h1>
-                        <h3 style={{ textDecoration: 'none', color: 'white' }} className="btn">SHOP</h3>
+                        <Link to='/items' style={{ textDecoration: 'none', color: 'black' }}>
+                            <h3 style={{ textDecoration: 'none', color: 'white' }} className="btn">SHOP</h3>
+                        </Link>
                     </div>
                 </div>
                 
