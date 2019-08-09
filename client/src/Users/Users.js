@@ -113,7 +113,8 @@ class Users extends Component {
             )
         } else {
             return (
-                <div>"There isn't any users to list"</div>
+                <div>"503 Service Unavailable"</div>
+                <div>"If you see this message, that our servers are temporarily unavailable. Our apologies, please refresh or come back another time."</div>
             )
         }
 
