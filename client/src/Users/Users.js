@@ -89,6 +89,7 @@ class Users extends Component {
                 <br />
                 <input
                   name="password"
+                  type="password"
                   placeholder="Enter password here"
                   onChange={this.handleChange}
                 />

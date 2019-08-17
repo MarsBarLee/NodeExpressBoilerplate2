@@ -13,7 +13,6 @@ class Items extends Component {
         }
     }
 
-// Methods go here
     async componentDidMount() {
         console.log("Items go!")
         try {
